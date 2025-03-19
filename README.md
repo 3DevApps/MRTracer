@@ -34,7 +34,7 @@ MRTracer consists of three components: the Client Application, Relay Server, and
 
 ---
 
-## Build
+## Build and Run
 
 #### Compute Node:
 
@@ -44,20 +44,21 @@ $ conan profile detect --force
 $ conan install . --build=missing --output-folder=build
 $ cmake -S . -B build
 $ cmake --build build
+$ ./build/mrtracer
 ```
 
 #### Relay Server:
 
 ```sh
 $ npm install
-$ npm run start
+$ npm run dev
 ```
 
 #### Client App:
 
 ```sh
 $ npm install
-$ npm run build
+$ npm run dev
 ```
 
 ## Usage
@@ -95,3 +96,6 @@ MRTracer enables the execution of the **Path Tracing algorithm across multiple G
 </div>
 
 ---
+
+MRtracer was used for the bachelor thesis project "Platform for investigating scheduling algorithms and resource
+utilization for Path Tracing in multi-GPU environments"
