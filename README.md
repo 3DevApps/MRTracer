@@ -1,76 +1,23 @@
 # MRTracer
 
-## Setup
+MRTracer is a real-time path tracer that renders scenes remotely on a selected environment and streams the results to a client application running in the browser.
 
-Run before building dependencies from source:
+MRTracer utilizes a GPU-based path tracing implementation using CUDA, requiring the remote rendering environment to be equipped with NVIDIA GPUs with CUDA support.
 
-### Ares
+Rendering results are displayed in the client application within the browser. MRTracer supports multi-GPU rendering and allows users to choose from various load-balancing algorithms to distribute the workload efficiently among devices.
 
-```bash
-source scripts/ares_setup.sh
-```
 
-### Ubuntu
+<figure>
+  <img width="1174" alt="image" src="https://github.com/user-attachments/assets/e1193a7f-2e7b-4ade-abc1-3438b4895fca" />
+  <figcaption>Client Application Overview</figcaption>
+</figure>
 
-```bash
-source scripts/ubuntu_setup.sh
-```
 
-## Building dependencies
 
-scripts/install_deps.sh downloads specified releases, builds them and installs them in ~/libs.
+## Architecture
 
-```bash
-./scripts/install_deps.sh
-```
+## Build
 
-## Compiling and Running
+## Usage
 
-To compile and run the project, follow the steps below:
-
-1. Create a build directory
-
-```bash
-mkdir build
-```
-
-2. Build the project
-
-```bash
-cmake --build build
-```
-
-> [!NOTE]
-> If you get `Cmake Error: could not load cache` error, run `cmake -S . -B build` and re-run the build command.
-
-3. Run the project
-
-```bash
-build/cuda_project
-```
-
-## Visualizing the output
-
-The output file is saved in the PPM format. To visualize it, you can utilize the GNOME Image Viewer.
-
-```bash
-eog build/out.ppm
-```
-
-## Using custom .obj and .mtl files
-
-To use custom .obj and .mtl files, specify the paths to these files in the main.cpp file.
-
-Currently, the program only supports the following materials with the corresponding properties:
-
-- lambertian
-  - Ka
-- metal
-  - Ka
-  - Ns
-- dielectric
-  - Ni
-- diffuse_light
-  - Kd
-
-To use these materials, ensure that the material's name in the .mtl file matches with one from the list above.
+## Example Scenes
