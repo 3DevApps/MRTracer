@@ -1,0 +1,40 @@
+{
+  "name": "multi-gpu-path-tracer-web-client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "proto": "pbjs -t json ./proto/main.proto > ./proto/genproto/bundle.json",
+    "preview": "vite preview",
+    "compile-proto": "pbjs -t json ./proto/main.proto > ./proto/genproto/bundle.json",
+    "deploy": "cp -R dist/* ../public/ && devil www restart pathtracing.klatka.it && echo 'Deployed to server'"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.3.7",
+    "antd": "^5.19.2",
+    "prismjs": "^1.29.0",
+    "protobufjs": "^7.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-simple-code-editor": "^0.14.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/dom-webcodecs": "^0.1.13",
+    "@types/prismjs": "^1.26.5",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.11.0",
+    "protobufjs-cli": "^1.1.3",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.11.0",
+    "vite": "^5.4.10"
+  }
+}

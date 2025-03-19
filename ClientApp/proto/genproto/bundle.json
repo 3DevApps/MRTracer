@@ -1,0 +1,202 @@
+{
+  "options": {
+    "syntax": "proto3"
+  },
+  "nested": {
+    "MouseMoveEvent": {
+      "fields": {
+        "xOffset": {
+          "type": "double",
+          "id": 1
+        },
+        "yOffset": {
+          "type": "double",
+          "id": 2
+        }
+      }
+    },
+    "CameraEvent": {
+      "oneofs": {
+        "cameraEvent": {
+          "oneof": [
+            "moveSpeed",
+            "position",
+            "rotation"
+          ]
+        }
+      },
+      "fields": {
+        "type": {
+          "type": "Type",
+          "id": 1
+        },
+        "moveSpeed": {
+          "type": "double",
+          "id": 2
+        },
+        "position": {
+          "type": "Position",
+          "id": 3
+        },
+        "rotation": {
+          "type": "Rotation",
+          "id": 4
+        }
+      },
+      "nested": {
+        "Type": {
+          "values": {
+            "FORWARD": 0,
+            "BACKWARD": 1,
+            "LEFT": 2,
+            "RIGHT": 3,
+            "UP": 4,
+            "DOWN": 5,
+            "FOV_INCREASE": 6,
+            "FOV_DECREASE": 7,
+            "PITCH_YAW": 8,
+            "SCENE_POSITION": 9
+          }
+        },
+        "Position": {
+          "fields": {
+            "x": {
+              "type": "double",
+              "id": 1
+            },
+            "y": {
+              "type": "double",
+              "id": 2
+            },
+            "z": {
+              "type": "double",
+              "id": 3
+            }
+          }
+        },
+        "Rotation": {
+          "fields": {
+            "pitch": {
+              "type": "double",
+              "id": 1
+            },
+            "yaw": {
+              "type": "double",
+              "id": 2
+            }
+          }
+        }
+      }
+    },
+    "RendererEvent": {
+      "oneofs": {
+        "rendererEvent": {
+          "oneof": [
+            "numberValue",
+            "blockValue",
+            "booleanValue",
+            "loadBalancingAlgorithm"
+          ]
+        }
+      },
+      "fields": {
+        "type": {
+          "type": "Type",
+          "id": 1
+        },
+        "numberValue": {
+          "type": "int32",
+          "id": 2
+        },
+        "blockValue": {
+          "type": "Block",
+          "id": 3
+        },
+        "booleanValue": {
+          "type": "bool",
+          "id": 4
+        },
+        "loadBalancingAlgorithm": {
+          "type": "LoadBalancingAlgorithm",
+          "id": 5
+        }
+      },
+      "nested": {
+        "Type": {
+          "values": {
+            "LOAD_UPLOADED_SCENE": 0,
+            "DOWNLOAD_SCENE_SNAPSHOT": 1,
+            "GPU_NUMBER": 2,
+            "STREAMS_PER_GPU": 3,
+            "SAMPLES_PER_PIXEL": 4,
+            "RECURSION_DEPTH": 5,
+            "THREAD_BLOCK_SIZE": 6,
+            "IMAGE_RESOLUTION": 7,
+            "SHOW_TASK_GRID": 8,
+            "LOAD_BALANCING_ALGORITHM": 9,
+            "K_PARAMETER": 10
+          }
+        },
+        "LoadBalancingAlgorithm": {
+          "values": {
+            "FSFL": 0,
+            "DSFL": 1,
+            "DSDL": 2
+          }
+        },
+        "Block": {
+          "fields": {
+            "x": {
+              "type": "int32",
+              "id": 1
+            },
+            "y": {
+              "type": "int32",
+              "id": 2
+            }
+          }
+        }
+      }
+    },
+    "Event": {
+      "oneofs": {
+        "eventType": {
+          "oneof": [
+            "mouseMove",
+            "camera",
+            "renderer"
+          ]
+        }
+      },
+      "fields": {
+        "type": {
+          "type": "EventType",
+          "id": 1
+        },
+        "mouseMove": {
+          "type": "MouseMoveEvent",
+          "id": 2
+        },
+        "camera": {
+          "type": "CameraEvent",
+          "id": 3
+        },
+        "renderer": {
+          "type": "RendererEvent",
+          "id": 4
+        }
+      },
+      "nested": {
+        "EventType": {
+          "values": {
+            "UNKNOWN": 0,
+            "MOUSE_MOVE": 1,
+            "CAMERA_EVENT": 2,
+            "RENDERER_EVENT": 3,
+            "SYNCHRONIZE_EVENT": 4
+          }
+        }
+      }
+    }
+  }
+}

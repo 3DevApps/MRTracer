@@ -1,0 +1,32 @@
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--header-height);
+  background-color: black;
+  justify-content: space-between;
+}
+
+.header-button {
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.header-buttons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 55px;
+  margin-right: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: white;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
