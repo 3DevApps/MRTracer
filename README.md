@@ -36,7 +36,7 @@ MRTracer consists of three components: the Client Application, Relay Server, and
 
 ## Build
 
-### Compute Node:
+#### Compute Node:
 
 ```sh
 $ cd ./ComputeNode
@@ -44,6 +44,20 @@ $ conan profile detect --force
 $ conan install . --build=missing --output-folder=build
 $ cmake -S . -B build
 $ cmake --build build
+```
+
+#### Relay Server:
+
+```sh
+$ npm install
+$ npm run start
+```
+
+#### Client App:
+
+```sh
+$ npm install
+$ npm run build
 ```
 
 ## Usage
