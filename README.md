@@ -14,6 +14,8 @@ Rendering results are displayed in the client application within the browser. MR
   <figcaption><strong>Client Application Overview</strong></figcaption>
 </figure>
 
+---
+
 ## Architecture
 
 MRTracer consists of three components: the Client Application, Relay Server, and Compute Node.
@@ -29,6 +31,8 @@ MRTracer consists of three components: the Client Application, Relay Server, and
   <br/>
   <figcaption><strong>MRTracer Architecture</strong></figcaption>
 </figure>
+
+---
 
 ## Build
 
@@ -46,10 +50,36 @@ Relay Server:
 
 Client Application:
 
+---
+
 ## Usage
 
-<img width="217" alt="image" src="https://github.com/user-attachments/assets/25b6ecd9-c9cd-41c0-9024-e785fe157d3f" />
+MRTracer’s parameters can be configured in the Client Application via the left-side panel. The panel is divided into four sections: Load Balancing Parameters, Path Tracing Algorithm Parameters, Scene Parameters, and Miscellaneous Settings.
 
-<img width="263" alt="image" src="https://github.com/user-attachments/assets/048ce686-55cb-4a4d-aa89-439eddeb092b" />
+<figure style="text-align: center;">
+  <img width="217" alt="image" src="https://github.com/user-attachments/assets/25b6ecd9-c9cd-41c0-9024-e785fe157d3f" />
+  <br/>
+  <figcaption><strong>MRTracer Architecture</strong></figcaption>
+</figure>
 
-<img width="407" alt="image" src="https://github.com/user-attachments/assets/865ee070-be97-437f-bca8-63f159fddfcf" />
+The Render Statistics Panel on the right side displays real-time metrics essential for evaluating the quality of the rendering process. By default, the panel shows a chart with the FPS (frames per second) metric. Users can add additional charts to track desired metrics by clicking the Add New Chart button. On each chart, the x-axis represents the timestamp of the metric values, while the y-axis displays the recorded metric values.
+
+<figure style="text-align: center;">
+  <img width="263" alt="image" src="https://github.com/user-attachments/assets/048ce686-55cb-4a4d-aa89-439eddeb092b" />
+  <br/>
+  <figcaption><strong>MRTracer Architecture</strong></figcaption>
+</figure>
+
+MRTracer enables the execution of the Path Tracing algorithm across multiple GPUs. When the user selects the option to visualize frame splitting in the settings, borders will highlight the areas rendered by each device in every frame.
+
+<figure style="text-align: center;">
+  <img width="407" alt="image" src="https://github.com/user-attachments/assets/865ee070-be97-437f-bca8-63f159fddfcf" />
+  <br/>
+  <figcaption><strong>MRTracer Architecture</strong></figcaption>
+</figure>
+
+---
+
+
+
+
