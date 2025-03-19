@@ -1,4 +1,4 @@
-# Multi-GPU Path Tracer
+# MRTracer
 
 ## Setup
 
