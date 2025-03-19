@@ -22,6 +22,8 @@ Rendering results are displayed in the client application within the browser. MR
   <figcaption><strong>MRTracer Architecture</strong></figcaption>
 </figure>
 
+## Requirements
+
 ## Build
 
 ## Usage
