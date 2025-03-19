@@ -16,16 +16,40 @@ Rendering results are displayed in the client application within the browser. MR
 
 ## Architecture
 
+MRTracer consists of three components: the Client Application, Relay Server, and Compute Node.
+
+- Client Application – Runs in the browser, allowing users to choose rendering parameters and select the scene to be rendered. It displays the rendering results and enables users to move the camera around the scene. Additionally, it provides key metrics to evaluate the performance of the rendering algorithm.
+
+- Relay Server – Manages connections between Client Application instances and Compute Nodes running in Compute Environments. It initializes the connection to the remote environment selected by the user, starts the Compute Node, and facilitates data transfer between the Compute Node and Client Application, including rendered frames and configuration updates.
+
+- Compute Node – Runs in a remote Compute Environment, executing rendering algorithms. It manages and distributes the workload across GPUs while also collecting performance metrics.
+
 <figure style="text-align: center;">
   <img width="700" alt="image" src="https://github.com/user-attachments/assets/ed7e823f-9f54-4384-be21-bb6f91ad10c8" />
   <br/>
   <figcaption><strong>MRTracer Architecture</strong></figcaption>
 </figure>
 
-## Requirements
-
 ## Build
+
+Compute Node:
+
+```
+$ cd ./ComputeNode
+$ conan profile detect --force
+$ conan install . --build=missing --output-folder=build
+$ cmake -S . -B build
+$ cmake --build build 
+```
+
+Relay Server:
+
+Client Application:
 
 ## Usage
 
-## Example Scenes
+<img width="217" alt="image" src="https://github.com/user-attachments/assets/25b6ecd9-c9cd-41c0-9024-e785fe157d3f" />
+
+<img width="263" alt="image" src="https://github.com/user-attachments/assets/048ce686-55cb-4a4d-aa89-439eddeb092b" />
+
+<img width="407" alt="image" src="https://github.com/user-attachments/assets/865ee070-be97-437f-bca8-63f159fddfcf" />
